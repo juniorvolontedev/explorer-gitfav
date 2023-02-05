@@ -47,6 +47,14 @@ export class Table {
   render() {
     this.clear();
 
+    console.log(this.data.length);
+
+    if (this.data.length === 0) {
+      document.querySelector(".no-data").classList.remove("hide");
+    } else {
+      document.querySelector(".no-data").classList.add("hide");
+    }
+
     this.data.forEach((user) => {
       const tr = document.createElement("tr");
       tr.innerHTML = `
